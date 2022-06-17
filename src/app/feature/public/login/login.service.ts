@@ -15,7 +15,7 @@ export class LoginService {
   ) { }
 
   login(): void {
-    this.authService.authenticateFake()
+    this.authService.authenticate()
       .subscribe((x) => {
         this.router.navigate([this.landingScreen]);
       });
