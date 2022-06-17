@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AuthInterceptorProvider } from '@core/interceptors/auth.interceptor';
 import { ErrorInterceptorProvider } from '@core/interceptors/error.interceptor';
+import { FakeBackendInterceptorProvider } from '@core/interceptors/fake-backend.interceptor';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {})],
   exports: [RouterModule],
   providers: [
+    FakeBackendInterceptorProvider,
     AuthInterceptorProvider,
     ErrorInterceptorProvider
   ]

@@ -6,6 +6,7 @@
  */
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserAPI } from '@shared/constants/api-endpoints/user-api.const';
 import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { AppConfig } from '../configs';
@@ -22,17 +23,13 @@ export class AuthService {
   ) { }
 
   authenticate(): Observable<any> {
-    return this.communicationService.get<any>('')
+    return this.communicationService.get<any>(UserAPI.authenticateUser())
       .pipe(
         tap((response: any) => {
-          if (response.data) {
-            localStorage.setItem(AppConfig.auth.token, response.data.token);
+          if (response) {
+            localStorage.setItem(AppConfig.auth.token, response.token);
           }
         }));
-  }
-
-  authenticateFake(): Observable<any> {
-    return of({});
   }
 
   isLoggedIn(): boolean {
