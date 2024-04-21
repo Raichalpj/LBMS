@@ -4,6 +4,7 @@
 
 .sidenav {
     width: 200px;
+    background-color: #ECECEC
 }
 
 .sidenav .mat-toolbar {
@@ -23,3 +24,27 @@
 .breadcrumb-container {
     margin: 20px;
 }
+
+.space{
+    margin-right: 10px;
+}
+/* Less specific (might be overridden) */
+
+  
+  /* More specific (likely to take precedence) */
+  .mat-sidenav-container .mat-nav-list a.active {
+    background-color: #2E5867;
+  }
+  
+  .active {
+    background-color: #2E5867;
+    color: white; /* Inverted text color */
+    border-radius: 4px; /* Add rounded corners */
+    border: 2px solid #2E5867; /* Example border style */
+  }
+  
+  .active .space svg path {
+    fill: white; /* Inverted icon color */
+  }
+  
+  

@@ -1,0 +1,33 @@
+<p>user-update works!</p>
+<p></p>
+<div class="container">
+    <div class="row">
+        <div class="column-md-8">
+            <form [formGroup]="userAddForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" class="form-control " formControlName="firstName">
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control " formControlName="lastName">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control " formControlName="email">
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="text" class="form-control" formControlName="password">
+                </div>
+                <div class="form-group" [hidden]="true">
+                    <label for="roleId">Role </label>
+                    <input type="number" class="form-control" formControlName="roleId">
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-outline-dark">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

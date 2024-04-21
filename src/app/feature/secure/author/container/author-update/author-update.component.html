@@ -1,0 +1,11 @@
+<p>author-update works!</p>
+<p>author-update works!</p>
+<p>Update Author Name</p>
+<form [formGroup]="updateAuthorForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="authorName">Author Name:</label>
+    <input type="text" class="form-control" formControlName="authorName">
+  </div>
+  <button type="submit" class="btn btn-primary">Update</button>
+</form>
+

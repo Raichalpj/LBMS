@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { AuthService } from '@core/services/auth.service';
 import { map, Observable, shareReplay } from 'rxjs';
 import { NavigationItems } from '../constants/navigation-item.const';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { NavigationItem } from '../models/navigation-items.model';
 
 @Component({
   selector: 'nggt-app-layout',
@@ -12,6 +14,7 @@ import { NavigationItems } from '../constants/navigation-item.const';
 })
 export class AppLayoutComponent {
 
+  
   /* Public Properties */
   navigationItems = NavigationItems;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
@@ -23,7 +26,8 @@ export class AppLayoutComponent {
   constructor(
     private breakpointObserver: BreakpointObserver,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private sanitizer:DomSanitizer
   ) { }
 
   /* Public Methods */
@@ -31,7 +35,12 @@ export class AppLayoutComponent {
     this.router.navigateByUrl('profile');
   }
 
+  
   logout(): void {
     this.authService.logout();
+  }
+
+  getTrustedHtml(icon: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(icon);
   }
 }

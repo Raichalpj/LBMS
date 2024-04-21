@@ -1,0 +1,20 @@
+.search-bar {
+    position: absolute;
+    top: 50px; 
+    right: 0;
+    z-index: 100; 
+}
+
+.search-bar input.form-control {
+    border: none;
+    border-radius: 12px; 
+    padding: 5px;
+}
+
+.search-bar .input-group-append button {
+    border: none; /* Remove default button border */
+    background-color: #2E5867; /* Change button background color */
+    color: white; /* Change button text color */
+    border-radius: 20px; /* Add border-radius for rounded corners */
+    padding: 10px 20px; /* Add padding for better appearance */
+}

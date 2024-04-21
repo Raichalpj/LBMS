@@ -12,6 +12,28 @@ const routes: Routes = [
                 loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
             },
             {
+                path: 'book',
+                loadChildren: () => import('./book/book.module').then(m => m.BookModule)
+            },
+            {
+                path:'author',
+                loadChildren:()=>import('./author/author.module').then(m=>m.AuthorModule)
+            },
+            {
+                
+                    path:'user',
+                    loadChildren:()=>import('./user/user.module').then(m=>m.UserModule)
+                
+            },
+            {
+                path:'book-detail',
+                loadChildren:()=>import('./book-details/book-details.module').then(m=>m.BookDetailsModule)
+            },
+            {
+                path:'transaction',
+                loadChildren:()=>import('./transaction/transaction.module').then(m=>m.TransactionModule)
+            },
+            {
                 path: 'profile',
                 loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
             },

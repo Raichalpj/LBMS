@@ -1,0 +1,14 @@
+.card{
+    width:800px;
+   
+}
+.card-title{
+    color: #2E5867;
+    font-weight: 600;
+    font-size: 1.375em;
+}
+@media screen and (max-width: 1000px) {
+    .card{
+        width:100%;
+    }
+}

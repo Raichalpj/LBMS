@@ -25,6 +25,7 @@
     "@ng-idle/keepalive": "^11.0.3",
     "@vslabs/ngx-mat-modal": "^0.0.2",
     "@vslabs/ngx-tiny-store": "^0.0.1",
+    "bootstrap": "^5.3.3",
     "ngx-perfect-scrollbar": "^10.1.1",
     "ngx-skeleton-loader": "^5.0.0",
     "rxjs": "~7.5.0",
