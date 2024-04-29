@@ -1,23 +1,23 @@
-<div class="container">
+<div class="container rounded-3 mt-3 " style=" width:1050px ; height: calc(100vh - 30px); overflow-y: auto">
   <div class="row">
     <div class="col-12">
-      <div>
-        <h2 class="book-list">Book List</h2>
-        <button class="btn btn-outline-dark mt-2" (click)="addBook()">Add</button>
-        <div class="d-flex justify-content-end gap-3">
+      <div class="rounded-3 p-2"  style="background-color: #FFFFFF;">
+        <!-- <h2 class="book-list">Book List</h2> -->
+       
+        <div class="d-flex justify-content-start gap-3">
           <input
             type="text"
-            class="form-control rounded-5 small-placeholder"
+            class="form-control  small-placeholder"
             placeholder="Search your favorite books"
             aria-label="iudfjk"
             aria-describedby="basic-addon1"
             [(ngModel)]="searchTitle"
           />
-          <span class="input-group-text rounded-end-5" id="basic-addon1">
+          <span class="input-group-text" id="basic-addon1" style="height: 40px; background-color: #FFFFFF;">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="15"
+              height="15"
               fill="currentColor"
               class="bi bi-search"
               viewBox="0 0 16 16"
@@ -28,28 +28,26 @@
             </svg>
           </span>
           <button
-            class="btn btn-outline-dark rounded-pill search-butt"
+            class="btn btn-outline-dark search-butt"
             type="button"
             (click)="searchByTitle()"
           >
             Search
           </button>
+          <!-- <button class="btn btn-outline-dark mt-2" (click)="addBook()">Add</button> -->
         </div>
       </div>
     </div>
+    
   </div>
-  <div class="container p-5">
-    <div class="row row-cols-1 row-cols-md-4">
-      <div class="col mb-4" *ngFor="let book of books">
-        <div class="card book-card" (click)="bookDetail(book.bookId)">
-          <img
-            src="https://i.pinimg.com/474x/e3/26/b9/e326b92ced0cac7932bf9cc3b6f31259.jpg"
-            class="card-img-top"
-            alt="Book Image"
-          />
-          <div class="card-body">
-            <h5 class="card-title">{{ book.title }}</h5>
-            <h4 class="card-text">Category: Fiction</h4>
+  <div class="container p-5 rounded-3 mt-3 " style="background-color: #FFFFFF;">
+    <div class="row row-cols1 row-cols-md-4 ">
+      <div class="col mb-4 " *ngFor="let book of books">
+        <div class="card book-card h-100 w-100 rounded-3" (click)="bookDetail(book.bookId)" style="height: 12px;">
+          <img src="{{ book.imageUrl }}" class="img-fluid rounded-3 book-image h-100 " alt="...">
+          <div class="card-body h-100 w-100 ">
+            <p class="card-subtitle custom-mar"><b>{{ book.title }}</b><p>
+            <p class="card-subtitle text-secondary " style="font-family: Brush Script MT, Brush Script Std, cursive;"><i> {{ book.category }}</i></p>
             <!-- <button class="btn btn-outline-dark mt-2" (click)="deleteBook(book.bookId)">Delete</button> -->
           </div>
         </div>

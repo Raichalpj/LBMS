@@ -1,11 +1,13 @@
-<p>author-update works!</p>
-<p>author-update works!</p>
-<p>Update Author Name</p>
-<form [formGroup]="updateAuthorForm" (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <label for="authorName">Author Name:</label>
-    <input type="text" class="form-control" formControlName="authorName">
-  </div>
-  <button type="submit" class="btn btn-primary">Update</button>
-</form>
+
+<div class="container mt-3">
+  <h1 class="mb-4">Update Author</h1>
+  <form [formGroup]="updateAuthorForm" (ngSubmit)="onSubmit()" class="shadow-sm p-5 bg-white rounded">
+    <div class="mb-3">
+      <label for="title" class="form-label">Name Of the Author</label>
+      <input type="text" class="form-control" formControlName="author" id="title" placeholder="Enter the Author Name">
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
+
 

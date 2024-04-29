@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core';
+import { UserService } from '../../user/service/user.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProfileService {
+export class ProfileService  {
 
-  constructor() { }
+  constructor(private userServ:UserService) { }
+
+  
 }

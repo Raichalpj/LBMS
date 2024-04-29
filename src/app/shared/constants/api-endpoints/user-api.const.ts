@@ -1,9 +1,10 @@
 import { HttpParams } from "@angular/common/http";
+import { Observable } from "rxjs";
 import { environment } from "src/environments/environment";
 
 export const UserAPI = {
     authenticateUser(): string {
-        return `${environment.apiBaseUrl}/user/authenticate`;
+        return `${environment.apiBaseUrl}api/Login/UserLogin`;
     },
 
     getBookList(): string{
@@ -60,7 +61,25 @@ export const UserAPI = {
 
     addRTransaction():string{
         return `${environment.apiBaseUrl}api/Transaction/Addreturn`
+    },
+
+    getFineList():string{
+        return `${environment.apiBaseUrl}api/Fine/GetFine`
+    },
+
+    updateFine(fineId:number):string
+    {
+        return `${environment.apiBaseUrl}api/Fine/UpdateFine/${fineId}`
+    },
+
+    getUserByUserId(userId:number):string{
+        return `${environment.apiBaseUrl}`
+    },
+
+    getReadHis(userId:number):string{
+        return `${environment.apiBaseUrl}api/Transaction/GetUserReadingHistory?userId=${userId}`
     }
+   
     
 
 }

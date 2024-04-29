@@ -1,32 +1,25 @@
-<p>user-add works!</p>
-<div class="container">
-    <div class="row">
-        <div class="column-md-8">
-            <form [formGroup]="userAddForm" (ngSubmit)="onSubmit()">
-                <div class="form-group">
-                    <label for="firstName">First Name</label>
-                    <input type="text" class="form-control " formControlName="firstName">
-                </div>
-                <div class="form-group">
-                    <label for="lastName">Last Name</label>
-                    <input type="text" class="form-control " formControlName="lastName">
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control " formControlName="email">
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="text" class="form-control" formControlName="password">
-                </div>
-                <div class="form-group" [hidden]="true">
-                    <label for="roleId">Role </label>
-                    <input type="number" class="form-control" formControlName="roleId">
-                </div>
-                <div class="form-group">
-                    <button type="submit" class="btn btn-outline-dark">Add</button>
-                </div>
-            </form>
+<div class="container mt-3">
+    <h1 class="mb-4">Add User</h1>
+    <form [formGroup]="userAddForm" (ngSubmit)="onSubmit()" class="shadow-sm p-5 bg-white rounded">
+      <div class="mb-3">
+        <label for="title" class="form-label">First Name</label>
+        <input type="text" class="form-control" formControlName="firstName" id="title" placeholder="Enter your First Name">
+      </div>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="lastName" class="form-label">Last Name</label>
+          <input type="text" class="form-control" formControlName="lastName" id="authorId" placeholder="Enter your Last Name">
         </div>
-    </div>
-</div>
+        <div class="col-md-4">
+          <label for="email" class="form-label">Email</label>
+          <input type="email" class="form-control" formControlName="email" id="isbn" placeholder="Enter your Email">
+        </div>
+        <div class="col-md-4">
+          <label for="password" class="form-label">Password</label>
+          <input type="password" class="form-control" formControlName="password" id="publishedYear" placeholder="Enter your Password">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Submit</button>
+    </form>
+  </div>
+  

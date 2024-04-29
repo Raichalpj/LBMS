@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ComponentBase } from '@shared/abstracts/component-base';
 import { BookService } from '../../service/book.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '@core/services/auth.service';
+import { AuthorService } from '../../../author/service/author.service';
 
 @Component({
   selector: 'app-book-add',
@@ -11,7 +13,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class BookAddComponent extends ComponentBase {
   
   newBookForm!: FormGroup;
-  constructor(private formBuilder: FormBuilder,private bookSer:BookService){
+  authors:any[]=[];
+  constructor(private formBuilder: FormBuilder,private bookSer:BookService,private authServ:AuthorService){
     super()
   }
   override initVariables(): void {
@@ -19,6 +22,12 @@ export class BookAddComponent extends ComponentBase {
       title: ['', Validators.required],
       authorId: [null, Validators.required], // Set to null initially
       isbn: [null, Validators.required],
+      description:[null, Validators.required],
+          category:[null, Validators.required],
+          imageUrl:[null, Validators.required],
+          rating:[null, Validators.required],
+          //status:[null, Validators.required],
+          numberOfPages:[null, Validators.required],
       publishedYear: [null, Validators.required],
       totalCopies: [null, Validators.required],
       availableCopies: [null, Validators.required]
@@ -26,7 +35,11 @@ export class BookAddComponent extends ComponentBase {
   }
   
   override subscribeEvents(): void {
-    // Remove this method call from here
+    this.authServ.getAuthor().subscribe(val => {
+      this.authors = val;
+      console.log(val);
+      //this.cdr.detectChanges();
+    });
   }
 
   onSubmit(): void {
@@ -39,6 +52,9 @@ export class BookAddComponent extends ComponentBase {
     } 
   }
 
+  getAuthors():void{
+    
+  }
   
   override load(): void {
 

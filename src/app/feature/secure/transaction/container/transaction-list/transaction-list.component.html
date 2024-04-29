@@ -17,8 +17,8 @@
                     <table class="table table-striped table-hover">
                         <thead>
                             <tr>
-                                <th>Book Id</th>
-                                <th>Patron Id</th>
+                                <th>Book</th>
+                                <th>Name</th>
                                 <th>Transaction Type</th>
                                 <th>Transaction Date</th>
                                 <th>Due date</th>
@@ -28,12 +28,12 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let tran of transactions">
-                                <td>{{tran.bookId}}</td>
-                                <td>{{tran.patronId}}</td>
+                                <td>{{tran.title}}</td>
+                                <td>{{tran.patronName}}</td>
                                 <td>{{ tran.transactionType}}</td>
-                                <td>{{tran.transactionDate}}</td>
-                                <td>{{ tran.dueDate }}</td>
-                                <td>{{tran.returnDate}}</td>
+                                <td>{{tran.transactionDate| date: 'mediumDate' }}</td>
+                                <td>{{ tran.dueDate| date: 'mediumDate' }}</td>
+                                <td>{{tran.returnDate| date: 'mediumDate'}}</td>
                                 
                                 <td>
                                     <button class="btn btn-outline-dark" >Delete</button>

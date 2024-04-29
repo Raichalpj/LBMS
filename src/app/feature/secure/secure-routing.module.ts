@@ -34,6 +34,14 @@ const routes: Routes = [
                 loadChildren:()=>import('./transaction/transaction.module').then(m=>m.TransactionModule)
             },
             {
+                path:'fine',
+                loadChildren:()=>import('./fine/fine.module').then(m=>m.FineModule)
+            },
+            {
+                path:'readshelf',
+                loadChildren:()=>import('./readshelf/readshelf.module').then(m=>m.ReadshelfModule)
+            },
+            {
                 path: 'profile',
                 loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule)
             },

@@ -18,3 +18,28 @@
     border-radius: 20px; /* Add border-radius for rounded corners */
     padding: 10px 20px; /* Add padding for better appearance */
 }
+.small-placeholder {
+    font-size: 0.5rem;
+    width: 90%; /* Full width for all screen sizes */
+    padding: 5px 10px; /* Adjust padding as needed */
+    height: 40px; 
+}
+.form-control{
+    //background-color: #EFEFEF;
+    width: 400px;
+    //height: 50px;
+    //margin-right: 20px;
+   
+}
+.search-butt{
+    background-color: #ffffff;
+    color:#4c5050;
+    border-color:rgb(219, 217, 217);
+    height: 40px;
+    font-weight: 250;
+}
+.input-group-text{
+    background-color: #EFEFEF;
+    margin-left: -57px;
+    
+}

@@ -4,11 +4,16 @@
       <div
         class="d-flex justify-content-center position-absolute top-50 start-50 translate-middle h-20"
       >
-        <div class="card bg-light mb-3 shadow-lg p-3 mb-5 bg-white rounded" style="max-width: 1000px">
+        <div
+          class="card bg-light mb-3 shadow-lg p-3 mb-5 bg-white rounded"
+          style="max-width: 1000px"
+        >
           <div class="row g-0 flex-row-reverse">
-            <div class="col-md-4 d-flex justify-content-between h-100 p-1 shadow-sm mb-5  rounded">
+            <div
+              class="col-md-4 d-flex justify-content-between h-100 p-1 shadow-sm mb-5 rounded"
+            >
               <img
-                src="https://media.shortform.com/covers/png/rich-dad-poor-dad-cover@8x.png"
+                src="{{ book.imageUrl }}"
                 class="img-fluid rounded-end"
                 alt="..."
               />
@@ -16,6 +21,7 @@
             <div class="col-md-8">
               <div class="card-body">
                 <h5 class="card-title">{{ book.title }}</h5>
+                <h3 class="card-text">{{ book.authorName }}</h3>
                 <!-- <p class="card-text">{{ book.isbn }}</p> -->
                 <p class="card-text">
                   It is a long established fact that a reader will be distracted
@@ -29,9 +35,19 @@
                   infancy.
                 </p>
                 <!-- <p class="card-text">{{ book.availableCopies }}</p> -->
-                <button type="button" class=" btn btn-outline-dark " (click)="updateBook(book.bookId)">Edit</button>
-                <button class="btn btn-outline-dark " (click)="deleteBook(book.bookId)">Delete</button>
-               
+                <button
+                  type="button"
+                  class="btn btn-outline-dark"
+                  (click)="updateBook(book.bookId)"
+                >
+                  Edit
+                </button>
+                <button
+                  class="btn btn-outline-dark"
+                  (click)="deleteBook(book.bookId)"
+                >
+                  Delete
+                </button>
               </div>
             </div>
           </div>

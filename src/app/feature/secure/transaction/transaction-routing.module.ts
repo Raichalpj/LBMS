@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TransactionListComponent } from './container/transaction-list/transaction-list.component';
-import { TransactionAddComponent } from './container/transaction-add/transaction-add.component';
-import { TransactionUpdateComponent } from './container/transaction-update/transaction-update.component';
+import { TransactionAddComponent } from './container/transaction-add-borrow/transaction-add.component';
+
+import { AddReturnTransactionComponent } from './container/add-return-transaction/add-return-transaction.component';
+import { TransactionUpdateComponent } from './container/transaction-update-return/transaction-update.component';
 
 const routes: Routes = [
   {
@@ -12,6 +14,10 @@ const routes: Routes = [
   {
     path:'add',
     component:TransactionAddComponent
+  },
+  {
+    path:'add-return',
+    component:AddReturnTransactionComponent
   },
   {
     path:'update/:id',

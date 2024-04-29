@@ -11,6 +11,7 @@ import { Observable, of } from 'rxjs';
 import { tap } from 'rxjs/operators';
 import { AppConfig } from '../configs';
 import { CommunicationService } from './communication.service';
+import { User } from 'src/app/feature/public/login/user';
 
 @Injectable({
   providedIn: 'root'
@@ -22,12 +23,12 @@ export class AuthService {
     private router: Router
   ) { }
 
-  authenticate(): Observable<any> {
-    return this.communicationService.get<any>(UserAPI.authenticateUser())
+  authenticate(user:User): Observable<User> {
+    return this.communicationService.post<any>(UserAPI.authenticateUser(),user)
       .pipe(
         tap((response: any) => {
           if (response) {
-            localStorage.setItem(AppConfig.auth.token, response.token);
+            localStorage.setItem(AppConfig.auth.token, JSON.stringify(response));
           }
         }));
   }

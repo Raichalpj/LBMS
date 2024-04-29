@@ -1,0 +1,21 @@
+<div class="container ">
+    <div class="mb-2">Fine List</div>
+    <ul class="list-group">
+        <li class="list-group-item list-group-item list-group-item-action list-group-item-dark small" *ngFor="let fine of fines">
+            <div class="row">
+                <div class="col">
+                    <strong>Patron ID:</strong> {{ fine.patronId }}
+                </div>
+                <div class="col">
+                    <strong>Fine Amount:</strong> {{ fine.fineAmount }}
+                </div>
+                <div class="col">
+                    <strong>Book ID:</strong> {{ fine.bookId }}
+                </div>
+                <div class="col">
+                    <strong>Payment Status:</strong> {{ fine.paymentStatus }}
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

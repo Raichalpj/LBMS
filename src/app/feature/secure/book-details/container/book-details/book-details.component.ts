@@ -26,10 +26,11 @@ export class BookDetailsComponent extends ComponentBase {
     title: '',
     isbn: '',
     authorId:'',
+    authorName:'',
     bookId:'',
     publishedYear:'',
     totalCopies:'',
-
+    imageUrl:'',
     availableCopies: 0,
   };
   
@@ -65,7 +66,7 @@ export class BookDetailsComponent extends ComponentBase {
     }
   }
 
- 
+
   override load(): void {
     //throw new Error('Method not implemented.');
   }

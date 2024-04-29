@@ -1,0 +1,24 @@
+<p>update Return Transaction</p>
+<form [formGroup]="newTranForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="bookId">BookId</label>
+        <input type="number" class="form-control" formControlName="bookId">
+    </div>
+    <div>
+        <label for="patronName">Patron Name:</label>
+        <input type="text" class="form-control" formControlName="patronName">
+    </div>
+    <div>
+        <label for="transactionDate">Date of Borrow:</label>
+        <input type="date" class="form-control" formControlName="transactionDate">
+    </div>
+    <div>
+        <label for="returnDate">Return:</label>
+        <input type="date" class="form-control" formControlName="returnDate">
+    </div>
+    <div>
+        <button type="submit" class="btn btn-outline-dark">Edit Submit</button>
+    </div>
+</form>
+
+

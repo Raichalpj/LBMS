@@ -74,14 +74,16 @@
 }
 .small-placeholder {
     font-size: 0.5rem;
-    width: 20%; /* Full width for all screen sizes */
+    width: 90%; /* Full width for all screen sizes */
     padding: 5px 10px; /* Adjust padding as needed */
     height: 40px; 
+    //background-color: aqua;
     /* Adjust height as needed */
 }
 .form-control{
-    background-color: #EFEFEF;
-    width: 200px;
+    //background-color: #EFEFEF;
+    width: 400px;
+    //height: 50px;
     //margin-right: 20px;
    
 }
@@ -91,14 +93,23 @@
     
 }
 .search-butt{
-    background-color: #2E5867;
-    color:white;
-    border:white
+    background-color: #ffffff;
+    color:#4c5050;
+    border-color:rgb(219, 217, 217);
+    height: 40px;
+    font-weight: 250;
 }
 
-
+.book-image {
+   // max-width: 100%;
+    //height: 200px; /* Adjust the height as needed */
+    object-fit: cover; /* Ensure the image covers the entire container */
+  }
+.custom-mar{
+    margin-bottom: -1rem;
+}
 .book-card{
-    // width: 22rem;
+   border: #EFEFEF;
 }
 .input-group{
  position: relative;

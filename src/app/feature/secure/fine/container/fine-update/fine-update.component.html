@@ -1,0 +1,27 @@
+<p>fine-update works!</p>
+<div class=" container mt-3">
+    <div class="mb-4">Update Fine</div>
+    <form [formGroup]="updateFineForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label for="patronId" class="form-label">patronId</label>
+            <input type="text" class="form-control" formControlName="patronId" id="patronId" placeholder="Enter the patronId">
+          </div>
+
+          <div class="mb-3">
+            <label for="fineAmount" class="form-label">fineAmount</label>
+            <input type="text" class="form-control" formControlName="fineAmount" id="fineAmount" placeholder="Enter the fineAmount">
+          </div>
+
+          <div class="mb-3">
+            <label for="bookId" class="form-label">bookId</label>
+            <input type="text" class="form-control" formControlName="bookId" id="bookId" placeholder="Enter the bookId">
+          </div>
+
+          <div class="mb-3">
+            <label for="paymentStatus" class="form-label">paymentStatus</label>
+            <input type="text" class="form-control" formControlName="paymentStatus" id="paymentStatus" placeholder="Enter the paymentStatus">
+          </div>
+          <button type="submit" class="btn btn-primary mt-3">Submit</button>
+          
+    </form>
+</div>

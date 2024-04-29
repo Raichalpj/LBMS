@@ -1,9 +1,10 @@
-<p>author-add works!</p>
-<form [formGroup]="addAuthorForm" (ngSubmit)="onSubmit()">
-    <div class="form-group">
-      <label for="authorName">Author Name:</label>
-      <input type="text" class="form-control" formControlName="authorName">
+<div class="container mt-3">
+  <h1 class="mb-4">Add Author</h1>
+  <form [formGroup]=" addAuthorForm" (ngSubmit)="onSubmit()" class="shadow-sm p-5 bg-white rounded">
+    <div class="mb-3">
+      <label for="authorName" class="form-label">Name Of the Author</label>
+      <input type="text" class="form-control" formControlName="authorName" id="authorName" placeholder="Enter the Author Name">
     </div>
     <button type="submit" class="btn btn-primary">Add</button>
   </form>
-  
+</div>
