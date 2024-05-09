@@ -1,4 +1,18 @@
-.fine-list-item {
-    width: 200px; /* Adjust the width as needed */
-    height: 40px; /* Adjust the height as needed */
+.search-butt{
+    background-color: #ffffff;
+    color:#4c5050;
+    border-color:rgb(219, 217, 217);
+    height: 40px;
+    font-weight: 250;
+}
+.input-group-text{
+    background-color: #EFEFEF;
+    margin-left: -57px;
+    
+}
+.small-placeholder {
+    font-size: 0.5rem;
+    width: 90%; /* Full width for all screen sizes */
+    padding: 5px 10px; /* Adjust padding as needed */
+    height: 40px; 
 }

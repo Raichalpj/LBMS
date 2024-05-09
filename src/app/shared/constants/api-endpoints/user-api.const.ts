@@ -31,12 +31,21 @@ export const UserAPI = {
 
     },
 
+    // AUTHOR
     getAuthorList(): string{
         return `${environment.apiBaseUrl}api/Author/GetAuthor`;
     },
 
+    deleteAuthor(authorId:number):any{
+        return `${environment.apiBaseUrl}api/Author/DeleteAuthor/${authorId}`
+    },
+
     addAuthor(): string{
         return `${environment.apiBaseUrl}api/Author/AddAuthor`;
+    },
+
+    updateAuthor(authorId:number):string{
+        return `${environment.apiBaseUrl}api/Author/UpdateAuthor/${authorId}`
     },
 
     getUserList():string{
@@ -78,6 +87,10 @@ export const UserAPI = {
 
     getReadHis(userId:number):string{
         return `${environment.apiBaseUrl}api/Transaction/GetUserReadingHistory?userId=${userId}`
+    },
+
+    updatePassword(userId:number):string{
+        return `${environment.apiBaseUrl}api/User/UpdatePassword/${userId}`
     }
    
     

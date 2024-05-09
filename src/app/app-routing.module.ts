@@ -7,10 +7,12 @@ import { FakeBackendInterceptorProvider } from '@core/interceptors/fake-backend.
 const routes: Routes = [
   {
     path: 'auth',
+    
     loadChildren: () => import('./feature/public/public.module').then(m => m.PublicModule)
   },
   {
     path: '',
+    
     loadChildren: () => import('./feature/secure/secure.module').then(m => m.SecureModule),
     data: {
       breadcrumb: 'Home'

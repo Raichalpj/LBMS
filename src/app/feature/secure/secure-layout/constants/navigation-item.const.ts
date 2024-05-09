@@ -26,4 +26,10 @@ export const NavigationItems: NavigationItem[] = [
         text:'Fines',
         url:'fine',
         icon:'fa-solid fa-money-check-dollar'
+    },
+    {
+        text:'Reader Shelf',
+        url:'readershelf',
+        icon:'fa-sharp fa-thin fa-book-open-reader'
+
     }];

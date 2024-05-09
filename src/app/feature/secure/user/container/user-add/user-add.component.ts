@@ -18,7 +18,9 @@ export class UserAddComponent extends ComponentBase {
       lastName:[''],
       email:[''],
       password:[''],
-      roleId:[2]
+      roleId:[''],
+      roleName:['']
+      
     });
   }
   override subscribeEvents(): void {
@@ -37,6 +39,22 @@ export class UserAddComponent extends ComponentBase {
       },error =>{
         console.error('error adding',error)
       })
+    }
+  }
+  onRoleChange(roleName: string) {
+    switch (roleName) {
+      case 'Librarian':
+        this.userAddForm.patchValue({ roleId: 1 }); // Set roleId based on role name
+        break;
+      case 'Patron':
+        this.userAddForm.patchValue({ roleId: 2 });
+        break;
+      case 'Admin':
+        this.userAddForm.patchValue({ roleId: 3 });
+        break;
+      default:
+        this.userAddForm.patchValue({ roleId: null });
+        break;
     }
   }
   constructor(private userSer:UserService,private formBuilder:FormBuilder) {

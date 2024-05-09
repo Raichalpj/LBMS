@@ -1,25 +1,82 @@
-<div class="container mt-3">
-    <h1 class="mb-4">Add User</h1>
-    <form [formGroup]="userAddForm" (ngSubmit)="onSubmit()" class="shadow-sm p-5 bg-white rounded">
-      <div class="mb-3">
-        <label for="title" class="form-label">First Name</label>
-        <input type="text" class="form-control" formControlName="firstName" id="title" placeholder="Enter your First Name">
-      </div>
-      <div class="row mb-3">
-        <div class="col-md-4">
-          <label for="lastName" class="form-label">Last Name</label>
-          <input type="text" class="form-control" formControlName="lastName" id="authorId" placeholder="Enter your Last Name">
-        </div>
-        <div class="col-md-4">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" formControlName="email" id="isbn" placeholder="Enter your Email">
-        </div>
-        <div class="col-md-4">
-          <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" formControlName="password" id="publishedYear" placeholder="Enter your Password">
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary mt-3">Submit</button>
-    </form>
+<div
+  class="container mt-3 rounded-3"
+  style="background-color: #ffffff; width: 1200px; height: 632px"
+>
+  <div class="row">
+    <div class="col p-3 mt-1">
+      <h4 style="color: #959798; font-weight: 2000">Add User</h4>
+    </div>
   </div>
-  
+  <div class="row">
+    <div class="col m-5">
+      <form [formGroup]="userAddForm" class="row" (ngSubmit)="onSubmit()">
+        <div class="col-5 mt-3">
+          <label for="title">First Name</label>
+          <input
+            type="text"
+            class="form-control shadow-sm p-2 mb-3 bg-white rounded"
+            formControlName="firstName"
+            id="title"
+            placeholder="Enter your First Name"
+          />
+        </div>
+        <div class="col-5 mt-3 form-group">
+          <label for="lastName">Last Name</label>
+          <input
+            type="text"
+            class="form-control shadow-sm p-2 mb-3 bg-white rounded"
+            formControlName="lastName"
+            id="authorId"
+            placeholder="Enter your Last Name"
+          />
+        </div>
+        <div class="col-5 mt-3 form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            class="form-control shadow-sm p-2 mb-3 bg-white rounded"
+            formControlName="email"
+            id="isbn"
+            placeholder="Enter your Email"
+          />
+        </div>
+        <div class="col-5 mt-3 form-group">
+          <label for="password">Password</label>
+          <input
+            type="password"
+            class="form-control shadow-sm p-2 mb-3 bg-white rounded"
+            formControlName="password"
+            id="publishedYear"
+            placeholder="Enter your Password"
+          />
+        </div>
+        <div class="col-5 mt-3 form-group">
+          <label for="roleName">Role</label>
+
+          <select
+            #roleSel
+            class="form-select shadow-sm mb-3 bg-white rounded"
+            (change)="onRoleChange(roleSel.value)"
+            id="bla"
+          >
+            <option value="" selected>Select Role</option>
+            <option value="Patron">Patron</option>
+            <option value="Librarian">Librarian</option>
+            <option value="Admin">Admin</option>
+          </select>
+        </div>
+
+        <div class="row p-1">
+          <div class="col-3 p-2">
+            <button
+              type="submit"
+              class="btn btn-outline-secondary col-4 text-center d-flex align-items-start justify-content-center m-4"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

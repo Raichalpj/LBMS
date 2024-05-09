@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 
 import { AppConfig } from '../configs';
 import { AuthService } from '../services/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
     providedIn: 'root'
@@ -20,7 +21,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-        const unProtectedResources = [''];
+        const unProtectedResources = [`${environment.apiBaseUrl}/Login`];
         const isUnProtectedResource = unProtectedResources.filter((x: string) => req.url.includes(x)).length > 0;
         const modifiedReq = isUnProtectedResource === true ? req : this.setHeader(req);
 
@@ -30,7 +31,8 @@ export class AuthInterceptor implements HttpInterceptor {
     /* Private Methods */
     private setHeader(req: HttpRequest<any>): HttpRequest<any> {
         let modifiedReq: HttpRequest<any> = req;
-        const token = localStorage.getItem(AppConfig.auth.token);
+        const token = JSON.parse(localStorage.getItem(AppConfig.auth.token)||'{}').accessToken;
+        console.log('helloo',token);
 
         if (!token) {
             this.authService.logout();

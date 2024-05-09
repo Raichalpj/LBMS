@@ -1,21 +1,40 @@
-<div class="container ">
-    <div class="mb-2">Fine List</div>
-    <ul class="list-group">
-        <li class="list-group-item list-group-item list-group-item-action list-group-item-dark small" *ngFor="let fine of fines">
-            <div class="row">
-                <div class="col">
-                    <strong>Patron ID:</strong> {{ fine.patronId }}
-                </div>
-                <div class="col">
-                    <strong>Fine Amount:</strong> {{ fine.fineAmount }}
-                </div>
-                <div class="col">
-                    <strong>Book ID:</strong> {{ fine.bookId }}
-                </div>
-                <div class="col">
-                    <strong>Payment Status:</strong> {{ fine.paymentStatus }}
-                </div>
-            </div>
-        </li>
-    </ul>
+<div
+  class="container mt-3 rounded-3"
+  style="background-color: #ffffff; width: 1200px; height: 632px"
+>
+  <div class="row">
+    <div class="col-3 p-3 mt-1">
+      <h4 style="color: #7b7c7c; font-weight: 2000">Users</h4>
+      <!-- <button type="button" (click)="addUser()">Add</button> -->
+    </div>
+    <div class="col p-4 mt-1 d-flex align-items-end justify-content-end">
+      <button type="button" class="btn btn-outline-dark orn">Add</button>
+    </div>
+  </div>
+  <div class="row overflow-auto" style="max-height: 30rem">
+    <div class="col m-4">
+      <div class="container">
+        <div class="table-responsive">
+          <table class="table table-striped table-hover">
+            <thead>
+              <tr>
+                <th>Patron ID</th>
+                <th>Fine Amount</th>
+                <th>Book ID</th>
+                <th>Payment Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let fine of fines">
+                <td>{{ fine.patronId }}</td>
+                <td>{{ fine.fineAmount }}</td>
+                <td>{{ fine.bookId }}</td>
+                <td>{{ fine.paymentStatus }}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

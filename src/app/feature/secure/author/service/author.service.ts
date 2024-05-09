@@ -12,17 +12,19 @@ export class AuthorService {
   constructor(private commServ:CommunicationService) { }
 
   getAuthor():Observable<any>{
-    return this.commServ.get<any>(UserAPI.getAuthorList(),null,null,false,false)
+    return this.commServ.get<any>(UserAPI.getAuthorList(),null,null,true,false)
   }
 
   deleteAuthor(authorId: number): Observable<any> {
-    const url = `${environment.apiBaseUrl}api/Author/DeleteAuthor/${authorId}`;
-    return this.commServ.delete<any>(url);
+    // const url = `${environment.apiBaseUrl}api/Author/DeleteAuthor/${authorId}`;
+    // return this.commServ.delete<any>(url);
+    return this.commServ.delete<any>(UserAPI.deleteAuthor(authorId),null,null,true)
   }
 
   updateAuthor(authorId: number, updatedAuthor: any): Observable<any> {
-    const url = `${environment.apiBaseUrl}api/Author/UpdateAuthor/${authorId}`;
-    return this.commServ.put<any>(url, updatedAuthor);
+    // const url = `${environment.apiBaseUrl}api/Author/UpdateAuthor/${authorId}`;
+    // return this.commServ.put<any>(url, updatedAuthor);
+    return this.commServ.put<any>(UserAPI.updateAuthor(authorId),updatedAuthor,null,null,true)
   }
 
   getAuthorById(authorId: number): Observable<any> {
@@ -31,6 +33,6 @@ export class AuthorService {
   }
   
   addAuthor(author:any):Observable<any>{
-    return this.commServ.post<any>(UserAPI.addAuthor(),author,null,false,false)
+    return this.commServ.post<any>(UserAPI.addAuthor(),author,null,null,true)
   }
 }

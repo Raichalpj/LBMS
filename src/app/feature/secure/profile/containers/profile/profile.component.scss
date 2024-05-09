@@ -1,0 +1,22 @@
+.small-input {
+    width:400px/* Adjust font size as needed */
+  }
+  .form-control{
+    border-color: #f38b40;
+    
+}
+.btn-outline-secondary:hover{
+        
+    background-color: #fdf2e9;
+    /* Change to the desired hover color */
+  
+}
+.btn-outline-secondary{
+color:#f38b40;
+border-color: #f38b40;
+
+font-weight: 400;
+::shadow{
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.1);
+}
+}

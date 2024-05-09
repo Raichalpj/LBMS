@@ -23,15 +23,13 @@ export class AppLayoutComponent implements OnInit{
   
   @ViewChild('sidenav') sidenavElement!: ElementRef; 
   
-  collapsed=false;
-  screenwidth=0;
+
   /* Public Properties */
   navigationItems = NavigationItems;
+  role:any;
  //navProf=NavigationProfiles;
-  toggleCollapse():void{
-    this.collapsed=!this.collapsed;
-    
-  }
+
+
 
   isSidebarOpen = false;
 
@@ -40,16 +38,12 @@ export class AppLayoutComponent implements OnInit{
   }
 
   ngOnInit(): void {
-   this.screenwidth=window.innerWidth
+    this.role= this.authServ.getUserRole();
+    console.log(this.role);
   }
- // collapsed = true; // Default to collapsed state
 
-  handleLeaveEvent(event: MouseEvent) {
-    // Check if the mouse leaves the entire sidenav area, not just the icon
-    if (!this.sidenavElement.nativeElement.contains(event.target)) {
-      this.collapsed = true;
-    }
-  }
+
+
   //navProf=NavigationProfiles;
   isHandset$: Observable<boolean> = this.breakpointObserver.observe(Breakpoints.Handset)
     .pipe(
@@ -61,7 +55,8 @@ export class AppLayoutComponent implements OnInit{
     private breakpointObserver: BreakpointObserver,
     private authService: AuthService,
     private router: Router,
-    private sanitizer:DomSanitizer
+    private sanitizer:DomSanitizer,
+    private authServ:AuthService
   ) { }
 
   // // /* Public Methods */
@@ -81,4 +76,10 @@ export class AppLayoutComponent implements OnInit{
   isLinkActive(route: string): boolean {
     return this.router.isActive(route, true);
 }
+
+ logout(){
+  this.authServ.logout();
+ }
+
+
 }

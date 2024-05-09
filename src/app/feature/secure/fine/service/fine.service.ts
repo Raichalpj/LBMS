@@ -12,7 +12,7 @@ export class FineService {
   constructor(private commServ:CommunicationService) { }
 
   getFineList():Observable<any>{
-    return this.commServ.get<any>(UserAPI.getFineList(),null,null,false,false)
+    return this.commServ.get<any>(UserAPI.getFineList(),null,'Looading',true,false)
   }
 
   // updateFine(fine:any):Observable<any>{
@@ -20,11 +20,11 @@ export class FineService {
   // }
   updateFine(fineId:number,fine:any):Observable<any>{
     const url=`${environment.apiBaseUrl}api/Fine/UpdateFine/${fineId}`
-    return this.commServ.put<any>(url,fine);
+    return this.commServ.put<any>(url,fine,null,null,true);
   }
 
   getFineById(fineId:number):Observable<any>{
     const url=`${environment.apiBaseUrl}api/Fine/GetFine?fineId=${fineId}`
-    return this.commServ.get<any>(url);
+    return this.commServ.get<any>(url,null,null,true,false);
   }
 }

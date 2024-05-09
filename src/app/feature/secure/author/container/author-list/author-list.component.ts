@@ -2,6 +2,8 @@ import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { ComponentBase } from '@shared/abstracts/component-base';
 import { AuthorService } from '../../service/author.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AuthService } from '@core/services/auth.service';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector:'app-author-list',
@@ -10,12 +12,20 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class AuthorListComponent extends ComponentBase{
   authors:any[]=[];
+  role:any
+  
+  showNewAuthorRow: boolean = false;
+  newAuthorName: string = '';
 
-  constructor(private authorSer:AuthorService,private cdr: ChangeDetectorRef,private router:Router,private route:ActivatedRoute){
+  constructor(private authorSer:AuthorService,private cdr: ChangeDetectorRef,private router:Router,private route:ActivatedRoute,private authServ:AuthService,public dialog: MatDialog){
     super()
     
   }
-  override initVariables(): void {
+
+  
+  override initVariables(): any {
+     this.role= this.authServ.getUserRole();
+    console.log(this.role);
     
   }
   override subscribeEvents(): void {
@@ -25,23 +35,66 @@ export class AuthorListComponent extends ComponentBase{
     });
   }
 
-  deleteAuthor(authorId:number): void {
-    if (confirm('Are you sure you want to delete this author?')) {
+  
+  deleteAuthor(authorId: number): void {
+    if (confirm("Are you sure you want to delete this author?")) {
       this.authorSer.deleteAuthor(authorId).subscribe(
         () => {
-          console.log('hello');
+          console.log('hello', authorId);
           this.subscribeEvents();
-          
-        
         },
         (error) => {
-          
           console.error('Error deleting author:', error);
         }
       );
     }
   }
   
+
+  openModal(): void {
+    const deleteModal = document.getElementById('deleteModal');
+    if (deleteModal) {
+      deleteModal.style.display = 'block';
+    }
+  }
+
+  closeModal(): void {
+    const deleteModal = document.getElementById('deleteModal');
+    if (deleteModal) {
+      deleteModal.style.display = 'none';
+    }
+  }
+
+
+
+  
+  addNewAuthorRow(): void {
+    this.showNewAuthorRow = true;
+  }
+
+  // Method to save the new author
+  saveNewAuthor(): void {
+    if (this.newAuthorName.trim() !== '') {
+      // Make an HTTP request to add the new author
+      this.authorSer.addAuthor({ authorName: this.newAuthorName }).subscribe(
+        (response) => {
+          // Handle successful response
+          console.log('Author added successfully:', response);
+
+          // Reset the new author input and hide the new author row
+          this.newAuthorName = '';
+          this.showNewAuthorRow = false;
+          this.subscribeEvents();
+        },
+        (error) => {
+          // Handle error
+          console.error('Error adding author:', error);
+        }
+      );
+    } else {
+      // Handle empty author name input
+      alert('Please enter a valid author name.');
+    }}
   
   
   
@@ -52,7 +105,7 @@ export class AuthorListComponent extends ComponentBase{
     }
   
     addBook():void{
-      this.router.navigate(['/author/add'])
+      // this.router.navigate(['/author/add'])
     }
   
   override load(): void {

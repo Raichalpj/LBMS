@@ -1,25 +1,125 @@
-<div class="container p-5">
-    <h2 style="color:#2E5867">Add a Book</h2>
-    <form class="rounded">
-        <div class="form-group w-50 p-3">
-            <label for="title" class="form-label ">Title</label>
-            <input
-              type="text"
-              class="form-control bg-body-secondary "
-              formControlName="title"
-              id="title"
-              placeholder="Enter the title"
-            />
+<div
+  class="container mt-3 rounded-3"
+  style="background-color: #ffffff; width: 1200px; height: 632px"
+>
+  <div class="row">
+    <div class="col p-3 mt-1">
+      <h4 style="color: #959798; font-weight: 2000">Add User</h4>
+    </div>
+  </div>
+  <div class="row overflow-auto" style="max-height: 30rem">
+    <div class="col m-2">
+      <form [formGroup]="newBookForm" class="row" (ngSubmit)="onSubmit()">
+        <div class="col-5 mt-3">
+          <label for="title">Title:</label>
+          <input
+            type="text"
+            class="form-control shadow-sm bg-body rounded p-2 m-2"
+            formControlName="title"
+            placeholder="Title of the Book"
+            [class.is-invalid]="newBookForm.get('title')?.touched && newBookForm.get('title')?.invalid"
+          />
+          <div *ngIf="newBookForm.get('title')?.errors && newBookForm.get('title')?.touched">
+            <small class="text-danger" *ngIf="newBookForm.get('title')?.errors?.['required']">Title is required.</small>
+                        <small class="text-danger" *ngIf="newBookForm.get('title')?.errors?.['title']">Title should be a valid email address.</small>
+                    </div>
+          </div>
+      
+        <div class="col-5 mt-3 form-group">
+          <label for="authorId">Author Name</label>
+          <select
+            class="form-select shadow-sm mb-3 bg-white rounded  m-2"  id="bla"
+            formControlName="authorId"
+          >
+            <option value="0">Select Authors</option>
+            <option *ngFor="let author of authors" [value]="author.authorId">
+              {{ author.authorName }}
+            </option>
+          </select>
         </div>
-        <div class="form-group w-25 p-3">
-            <label for="authorId" class="form-label">Author</label>
-            <select class="form-select bg-body-secondary " formControlName="authorId" id="authorId">
-              <option value="0">Select Authors</option>
-              <option *ngFor="let author of authors" [value]="author.authorId">
-                {{ author.authorName }}
-              </option>
-            </select>
+        <div class="col-9 mt-3 form-group">
+          <label for="description">Description:</label>
+          <textarea
+            class="form-control shadow-sm bg-body rounded p-2 m-2"
+            formControlName="description"
+            rows="3"
+          ></textarea>
         </div>
-    </form>
-    
+        <div class="col-5 mt-3 form-group">
+          <label for="imageUrl">Image URL:</label>
+          <input
+            type="text"
+            class="form-control shadow-sm bg-body rounded p-2 m-2"
+            formControlName="imageUrl"
+          />
+        </div>
+        <div class="col-5 mt-3 form-group">
+          <label for="publishedYear">Published Year:</label>
+          <input
+            type="number"
+            class="form-control shadow-sm bg-body rounded p-2 m-2"
+            formControlName="publishedYear"
+          />
+        </div>
+        <div class="col-5 mt-3 form-group">
+          <label for="availableCopies">Available Copies:</label>
+          <input
+            type="number"
+            class="form-control shadow-sm bg-body rounded p-2 m-2"
+            formControlName="availableCopies"
+          />
+        </div>
+        <div class="col-5 mt-3 form-group">
+          <label for="categoryId">Category:</label>
+          <input
+            type="text"
+            class="form-control shadow-sm bg-body rounded p-2 m-2"
+            formControlName="category"
+          />
+        </div>
+        <div class="col-5 mt-3 form-group">
+          <label for="isbn">ISBN:</label>
+          <input
+            type="number"
+            class="form-control shadow-sm bg-body rounded p-2 m-2"
+            formControlName="isbn"
+          />
+        </div>
+        <div class="col-5 mt-3 form-group">
+          <label for="totalCopies">Total Copies:</label>
+          <input
+            type="number"
+            class="form-control shadow-sm bg-body rounded p-2 m-2"
+            formControlName="totalCopies"
+          />
+        </div>
+        <div class="col-5 mt-3 form-group">
+          <label for="rating" class="form-label">Rating</label>
+          <input
+            type="number"
+            class="form-control shadow-sm bg-body rounded p-2 m-2"
+            formControlName="rating"
+          />
+        </div>
+        <div class="col-5 mt-3 form-group">
+          <label for="numberOfPages" class="form-label">Number Of Pages</label>
+          <input
+            type="numberOfPages"
+            class="form-control shadow-sm bg-body rounded p-2 m-2"
+            formControlName="numberOfPages"
+          />
+        </div>
+        <div class="row p-1">
+          <div class="col-3 p-2">
+            <button
+              type="submit"
+              class="btn btn-outline-secondary col-4 text-center d-flex align-items-start justify-content-center m-4"
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

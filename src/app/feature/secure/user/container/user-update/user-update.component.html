@@ -1,8 +1,15 @@
-<p>user-update works!</p>
-<p></p>
-<div class="container">
+
+<div
+  class="container mt-3 rounded-3"
+  style="background-color: #ffffff; width: 1200px; height: 632px"
+>
     <div class="row">
-        <div class="column-md-8">
+        <div class="col p-3 mt-1">
+            <h4 style="color: #959798; font-weight: 2000">Add User</h4>
+          </div>
+    </div>
+    <div class="row">
+        <div class="col m-5">
             <form [formGroup]="userAddForm" (ngSubmit)="onSubmit()">
                 <div class="form-group">
                     <label for="firstName">First Name</label>
@@ -23,7 +30,7 @@
                 <div class="form-group" [hidden]="true">
                     <label for="roleId">Role </label>
                     <input type="number" class="form-control" formControlName="roleId">
-                </div>
+                </div>   
                 <div class="form-group">
                     <button type="submit" class="btn btn-outline-dark">Update</button>
                 </div>

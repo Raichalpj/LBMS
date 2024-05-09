@@ -1,45 +1,94 @@
-.search-bar {
-    position: absolute;
-    top: 50px; 
-    right: 0;
-    z-index: 100; 
-}
-
-.search-bar input.form-control {
-    border: none;
-    border-radius: 12px; 
-    padding: 5px;
-}
-
-.search-bar .input-group-append button {
-    border: none; /* Remove default button border */
-    background-color: #2E5867; /* Change button background color */
-    color: white; /* Change button text color */
-    border-radius: 20px; /* Add border-radius for rounded corners */
-    padding: 10px 20px; /* Add padding for better appearance */
-}
-.small-placeholder {
-    font-size: 0.5rem;
-    width: 90%; /* Full width for all screen sizes */
-    padding: 5px 10px; /* Adjust padding as needed */
-    height: 40px; 
-}
-.form-control{
-    //background-color: #EFEFEF;
-    width: 400px;
-    //height: 50px;
-    //margin-right: 20px;
-   
-}
-.search-butt{
-    background-color: #ffffff;
-    color:#4c5050;
-    border-color:rgb(219, 217, 217);
-    height: 40px;
-    font-weight: 250;
-}
-.input-group-text{
-    background-color: #EFEFEF;
-    margin-left: -57px;
+.container{
+    height: 70%;
+    .search-bar {
+        position: absolute;
+        top: 50px; 
+        right: 0;
+        z-index: 100; 
+    }
     
+    .search-bar input.form-control {
+        border: none;
+        border-radius: 12px; 
+        padding: 5px;
+    }
+    
+    .search-bar .input-group-append button {
+        border: none; /* Remove default button border */
+        background-color: #2E5867; /* Change button background color */
+        color: white; /* Change button text color */
+        border-radius: 20px; /* Add border-radius for rounded corners */
+        padding: 10px 20px; /* Add padding for better appearance */
+    }
+    .small-placeholder {
+        font-size: 0.5rem;
+        width: 90%; /* Full width for all screen sizes */
+        padding: 5px 10px; /* Adjust padding as needed */
+        height: 40px; 
+    }
+    .form-control{
+        //background-color: #EFEFEF;
+        width: 400px;
+        //height: 50px;
+        //margin-right: 20px;
+       
+    }
+    .search-butt{
+        background-color: #ffffff;
+        color:#4c5050;
+        border-color:rgb(219, 217, 217);
+        height: 40px;
+        font-weight: 250;
+    }
+    .input-group-text{
+        background-color: #EFEFEF;
+        margin-left: -57px;
+        
+    }
+    .adjusted-container {
+        max-width: 1200px;
+        max-height: 300px;
+        margin: 0 auto; /* Centers the container horizontally */
+      }
+      
+    
+    
+      /* Modal Styles */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1000; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgba(232, 208, 208, 0.4); /* Black w/ opacity */
+      }
+      
+      /* Modal Content */
+      .modal-content {
+        background-color: #a22929;
+        margin: 30% auto; /* 15% from the top and centered */
+        // padding: 20x;
+        border: 1px solid #888;
+        width: 50%; /* Could be more or less, depending on screen size */
+        border-radius: 5px;
+      }
+      
+      /* Close Button */
+      .close {
+        color: #173117;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: rgb(236, 219, 219);
+        text-decoration: none;
+        cursor: pointer;
+      }
+      
 }

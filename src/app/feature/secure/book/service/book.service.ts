@@ -14,12 +14,12 @@ export class BookService {
 
   getBook():Observable<any>{
 //return this.commServ.get<any>(environment.apiBaseUrl+"api/Book/getBooks")
-return this.commServ.get<any>(UserAPI.getBookList(),null,null,false,false)
+return this.commServ.get<any>(UserAPI.getBookList(),null,null,true,false)
 
   }
 
   addBook(book:any):Observable<any>{
-    return this.commServ.post<any>(UserAPI.getBookAdd(), book, null, false, false);
+    return this.commServ.post<any>(UserAPI.getBookAdd(), book, null, null, true);
     //return this.commServ.post<any>(environment.apiBaseUrl+"api/Book/AddBooks",book)
   }
 
@@ -30,20 +30,20 @@ return this.commServ.get<any>(UserAPI.getBookList(),null,null,false,false)
 
   deleteBook(bookId: number): Observable<any> {
     const url = `${environment.apiBaseUrl}api/Book/DeleteBooks/${bookId}`;
-    return this.commServ.delete<any>(url);
+    return this.commServ.delete<any>(url,null,null,true);
   }
 
   
   updateBook(bookId: number, updatedBook: any): Observable<any> {
     const url = `${environment.apiBaseUrl}api/Book/UpdateBooks/${bookId}`;
-    return this.commServ.put<any>(url, updatedBook);
+    return this.commServ.put<any>(url, updatedBook,null,null,true);
   }
 
   getBookById(bookId: number): Observable<any> {
    
     const url = `${environment.apiBaseUrl}api/Book/getBooks?id=${bookId}`;
     console.log('url'+bookId)
-    return this.commServ.get<any>(url);
+    return this.commServ.get<any>(url,null,null,true,false);
     
   }
 } 

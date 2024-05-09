@@ -1,22 +1,36 @@
-<p>transaction-add works!</p>
-<form [formGroup]="newTranForm" (ngSubmit)="onSubmit()">
-    <div>
+<div
+  class="container mt-3 rounded-3"
+  style="background-color: #ffffff; width: 1200px; height: 632px"
+>
+  <div class="row">
+    <div class="col-3 p-3 mt-1">
+      <h4 style="color: #7b7c7c; font-weight: 2000">Borrow Book</h4>
+      <!-- <button type="button" (click)="addUser()">Add</button> -->
+    </div>
+    <form [formGroup]="newTranForm" (ngSubmit)="onSubmit()">
+      <div>
         <label for="bookId">BookId</label>
-        <input type="text" class="form-control" formControlName="bookId">
-    </div>
-    <div>
+        <input type="text" class="form-control" formControlName="bookId" />
+      </div>
+      <div>
         <label for="patronName">Patron Name:</label>
-        <input type="text" class="form-control" formControlName="patName">
-    </div>
-    <div>
+        <input type="text" class="form-control" formControlName="patName" />
+      </div>
+      <div>
         <label for="transactionDate">Date of Borrow:</label>
-        <input type="date" class="form-control" formControlName="transactionDate">
-    </div>
-    <div>
+        <input
+          type="date"
+          class="form-control"
+          formControlName="transactionDate"
+        />
+      </div>
+      <div>
         <label for="DueDate">Due:</label>
-        <input type="date" class="form-control" formControlName="dueDate">
-    </div>
-    <div>
-        <button type="submit" class="btn btn-outline-dark">Add</button>
-    </div>
-</form>
+        <input type="date" class="form-control" formControlName="dueDate" />
+      </div>
+      <div>
+        <button type="submit" class="btn btn-outline-dark m-4">Add</button>
+      </div>
+    </form>
+  </div>
+</div>

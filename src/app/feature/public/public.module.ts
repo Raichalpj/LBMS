@@ -5,13 +5,17 @@ import { LoginComponent } from './login/login.component';
 import { PublicRoutingModule } from './public-routing.module';
 import { PublicComponent } from './public.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { LandingpageComponent } from './LandingPage/landingpage.component';
+
 
 @NgModule({
   declarations: [
     LoginComponent,
     ForgotPasswordComponent,
     PublicComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    LandingpageComponent
+  
   ],
   imports: [
     PublicRoutingModule,

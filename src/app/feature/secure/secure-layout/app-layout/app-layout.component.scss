@@ -15,10 +15,22 @@
     
     
 }
-.mat-nav-list{
-  color:#707272;
-}
 
+.mat-list-item{
+    color: #6f6d6b;
+    
+       
+      
+      
+   
+  
+  
+}
+.active-nav-item {
+   color: #f38b40; /* Change to your desired color */
+  }
+  
+  
 .sidenav .mat-toolbar {
     background:inherit;
     
@@ -31,166 +43,14 @@
     
 }
 
-.example-spacer {
-    flex: 1 1 auto;
+.mat-button{
+    :hover{
+        box-sizing:content-box;
+        box-shadow: #f38b40;
+    }
 }
-
-.breadcrumb-container {
-    margin: 20px;
-}
-
-.space{
-    margin-right: 10px;
-}
-.active-link {
-  color: #f38b40; /* Change the color to your desired color */
-}
-
-/* Less specific (might be overridden) */
-
+.no-hover-box {
+    box-shadow: none !important;
+  }
   
-  /* More specific (likely to take precedence) */
-  // .mat-sidenav-container .mat-nav-list a.active {
-  //   background-color: #161616;
-  // }
-  
-  // .active {
-  //   background-color: #2E5867;
-  //   color: white; /* Inverted text color */
-  //   border-radius: 4px; /* Add rounded corners */
-  //   //border: 2px solid #2E5867; /* Example border style */
-  // }
-  
-  // .active .space svg path {
-  //   fill: white; /* Inverted icon color */
-  // }
-  
-  // .profile{
-  //   //display: flex; /* Enable flexbox for the div */
-  // justify-content: center; /* Horizontally center content */
-  // //align-items: center; 
-  // padding: 40px;;
-  // }
-  
-// .sidenav{
-//   background: ffffff;
-//   transition: all .5s ease;
-//   position: fixed;
-//   z-index:1;
-//   top:0;
-//   width: 5rem;
-//   height: 100vh;
-//   box-shadow: 0.063rem 0 #fbfcfd;
 
-//   .logo-container{
-//     display: flex;
-//     align-items: center;
-//     padding: 0.938rem 0.938rem 0.938rem;
-//     width: 100%;
-
-//     .logo{
-//         background: #f8fbfb;
-//         text-align: center;
-//         width: 3rem;
-//         min-width: 3rem;
-       
-//         border-radius: 0.213rem;
-//         //padding: 0.313rem;
-//         font-size: 24px;
-//         font-weight: 900;
-//         cursor: pointer;
-//         border: none;
-//     }
-//     .logo-text{
-//       margin-left: 1.5rem;
-//       font-size: 24px;
-//       font-weight: 700;
-//       color:#010101;
-//     }
-
-//     .btn-close{
-//       margin-left: auto;
-//       cursor: pointer;
-//       width: 2rem;
-//       height: 2rem;
-//       border-radius: 50%;
-//       background-color: transparent;
-//       border: none;
-
-//       .fa-times{
-//         color:#fff;
-//         font-size: 24px;
-//       }
-//     }
-//   }
-// }
-
-// .sidenav-collapsed{
-//   width: 16.5625rem;
-
-// }
-// .sidenav-nav{
-//   list-style: none;
-//   padding: 0.938rem;
-//   margin: 0;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   height: calc(100% - 3.65rem);
-//   cursor: pointer;
-
-//   .sidenav-nav-link{
-//     display: flex;
-//     align-items: center;
-//     height: 3rem;
-//     color:#f38b41;
-//     text-decoration: none;
-//     border-radius: 0.625rem;
-//     transition: color .3s ease;
-
-//     .sidenav-link-icon{
-//       font-size: 22px;
-//       width: 2rem;
-//       min-width: 2rem;
-//       margin: 0 0.5rem;
-//       text-align: center;
-//     }
-
-//     .sidenav-link-text{
-//       margin-left: 1.5rem;
-//     }
-//   }
-// }
-
-// .sidenav-nav-item:hover{
-//   .sidenav-nav-link{
-//     background-color: rgb(236 204 252);
-//     //background-color: #fff;
-//     color:#000;
-
-//   }
-// }
-
-// .sidenav {
-//   width: 200px; /* Set the width of the side navbar */
-//   height: 95vh; /* Set the height to fill the viewport */
-//   position: fixed; /* Position the side navbar */
-//   top: 15px; /* Position from the top */
-//   left: 15px;
-//   //margin-bottom: 24px;
-//  // padding-bottom: px; /* Position from the left */
-//   background-color: #fff; /* Background color of the side navbar */
-//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for styling */
-// }
-
-// .navbar {
-//   width: 100%; /* Ensure the navbar spans the entire width of the side navbar */
-//   border: none; /* Optional: Remove border */
-// }
-
-// .container-fluid {
-//   padding: 20px; 
-//   //background-color: aliceblue;/* Add padding for content */
-// }
-
-// /* Optional: Add styles for links, etc. */

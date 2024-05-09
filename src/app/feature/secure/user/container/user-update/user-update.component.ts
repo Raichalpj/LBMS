@@ -61,7 +61,7 @@ export class UserUpdateComponent extends ComponentBase implements FormBase{
         }
       )
     }
-  }
+  } 
 
   
  

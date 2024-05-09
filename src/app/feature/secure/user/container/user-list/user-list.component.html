@@ -1,46 +1,54 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 offset-md-12">
-            <div class="user-list">
-                <h2 class="user-list-heading">User List</h2>
-                <div class="search-bar">
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control rounded-pill" placeholder="Search by email" >
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-yellow rounded-pill " type="button" >Search</button>
-                        </div>
-                    </div>
-                </div>
-                <button class="btn btn-outline-dark mt-2" (click)="addUser()">Add</button>
-                <div class="table-responsive">
-                    <table class="table table-striped table-hover">
-                        <thead>
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Email</th>
-                                <th>Password</th>
-                                <th>Role ID</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr *ngFor="let user of users">
-                                <td>{{user.firstName}}</td>
-                                <td>{{user.lastName}}</td>
-                                <td>{{ user.email }}</td>
-                                <td>{{ user.password }}</td>
-                                <td>{{ user.roleId }}</td>
-                                <td>
-                                    <button class="btn btn-outline-dark" (click)="deleteUser(user.userId)">Delete</button>
-                                    <button class="btn btn-outline-dark" (click)="updateUser(user.userId)">Update</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 
+<div
+class="container mt-3 rounded-3"
+style="background-color: #ffffff; width: 1200px; height: 632px"
+>
+  <div class="row">
+    <div class="col-3 p-3 mt-1">
+      <h4 style="color: #7b7c7c; font-weight: 2000">Users</h4>
+      <!-- <button type="button" (click)="addUser()">Add</button> -->
+    </div>
+    <div class="col p-4 mt-1 d-flex align-items-end justify-content-end">
+      <button
+        type="button"
+        class="btn btn-outline-dark orn"
+        (click)="addUser()"
+      >
+        Add
+      </button>
+    </div>
+  </div>
+  <div class="row overflow-auto" style="max-height: 30rem;" >
+    <div class="col m-4">
+      <div class="container ">
+        <div class="table-responsive ">
+          <table class="table table-striped table-hover table-nowrap overflow-y-scroll ">
+            <thead class="colr">
+              <tr>
+                <th class="tab1">First Name</th>
+                <th class="tab2">Last Name</th>
+                <th class="tab3">Email</th>
+                <th class="tab4">Password</th>
+                <th class="tab5">Role Name</th>
+                <th class="tab6">Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let user of users">
+                <td class="t1">{{ user.firstName }}</td>
+                <td class="t2">{{ user.lastName }}</td>
+                <td class="t3">{{ user.email }}</td>
+                <td class="t4">{{ user.password }}</td>
+                <td class="t5">{{ user.roleName }}</td>
+                <td >
+                  <button class="btn btn-outline-dark m-1 " rounded-5  (click)="deleteUser(user.userId)">Remove</button>
+                  <button class="btn btn-outline-dark" rounded-5 (click)="updateUser(user.userId)">Edit</button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

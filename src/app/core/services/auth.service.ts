@@ -18,6 +18,7 @@ import { User } from 'src/app/feature/public/login/user';
 })
 export class AuthService {
 
+  roleId!:number;
   constructor(
     private communicationService: CommunicationService,
     private router: Router
@@ -37,6 +38,10 @@ export class AuthService {
     return true;
   }
 
+  getUserRole():number{
+    this.roleId= JSON.parse(localStorage.getItem(AppConfig.auth.token)||'{}').roleId;
+    return this.roleId;
+  }
   logout(): void {
     localStorage.removeItem(AppConfig.auth.token);
     this.router.navigate(['/auth/login']);
